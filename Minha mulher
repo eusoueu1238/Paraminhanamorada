@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Paraminhamulherlinda</title>
+<style>
+  /* Reset básico */
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+
+  body, html {
+    height: 100%;
+    font-family: 'Arial', sans-serif;
+    overflow: hidden;
+  }
+
+  /* Tela de entrada */
+  #entrada {
+    background: #d4f0fc;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+
+  #macaco {
+    width: 150px;
+    cursor: pointer;
+    user-select: none;
+    animation: pendulo 2s ease-in-out infinite;
+  }
+
+  @keyframes pendulo {
+    0%, 100% { transform: rotate(15deg); }
+    50% { transform: rotate(-15deg); }
+  }
+
+  #clicar-texto {
+    margin-top: 15px;
+    font-size: 22px;
+    font-weight: bold;
+    color: #333;
+    cursor: pointer;
+    user-select: none;
+  }
+
+  /* Tela de trollagem */
+  #trollagem {
+    display: none;
+    height: 100vh;
+    background: #ffe066;
+    color: #222;
+    font-size: 28px;
+    font-weight: bold;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 20px;
+  }
+
+  /* Página principal */
+  #principal {
+    display: none;
+    height: 100vh;
+    background-image: url('https://i.imgur.com/4xW03qX.png'); /* Fundo Hello Kitty */
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    overflow-y: auto;
+    padding: 30px 20px;
+    color: #4b2e83;
+    text-shadow: 1px 1px 2px white;
+  }
+
+  #texto-romantico {
+    max-width: 600px;
+    margin: auto;
+    background: rgba(255 255 255 / 0.8);
+    padding: 25px 30px;
+    border-radius: 12px;
+    font-size: 20px;
+    line-height: 1.5;
+    font-family: 'Georgia', serif;
+  }
+</style>
+</head>
+<body>
+
+<!-- Tela de entrada -->
+<div id="entrada">
+  <img id="macaco" src="https://i.imgur.com/bMYR5dp.png" alt="Macaco pendurado" />
+  <div id="clicar-texto">Clica aqui</div>
+</div>
+
+<!-- Tela de trollagem -->
+<div id="trollagem">
+  Ainda vou casar cntg bebezona
+</div>
+
+<!-- Página principal -->
+<div id="principal">
+  <div id="texto-romantico">
+    Você é a minha luz, espero ter você cmg pelo resto da minha vida, eu te quero até meu último suspiro quando eu tiver bem velhinho, sabe amor? Meu amor por você é infinito, eu quero te chamar de minha namorada p sempre e esposa também, quero ter nossa família que planejamos muito muito, nosso amor é lindo e eterno, um fato era p eu ter conhecido você aquele dia amor, eu não sabia aonde enfiar minha cara pedindo seu insta e você me dando mó fora, ms o importante é q agora eu e você tem 5 meses de namoro, logo logo 6 e logo 60 anos de casado, e em breve eu vou te abraçar, olhar no fundo do seus olhos e dizer o quanto eu te amo e sou feliz por ter você comigo. Eu quero ter uma vida eterna ao seu lado, quero buscar ser o melhor p você sempre, você é o amor da minha vida e eu te amo muito, eu sempre vou valorizar a mulher linda que eu tenho, você é mt importante na minha vida meu amor, eu vivo por vc e pelo nosso futuro, você é muito amor da minha vida e eu quero casar cntg, ter nossa família, nossa casa e tudo, vamo ser o casal mais mais de SP e ES hahahahahaahah, quero ter uma vida infinita ao seu lado, eu amo sua voz, sabia amor? Quero muito que um dia eu e vc vai call e aí vamo jgr mt coisa em call e vai ser o mlhr dia da minha vida, um dos mlhrs dia da minha vida na vdd, pq o melhor de todos foi quando você disse sim, eu te amo meu amor
+  </div>
+
+  <audio id="musica" src="https://soundcloud.com/nanda-menezes/ainda-bem-vanessa-da-mata" autoplay loop></audio>
+</div>
+
+<script>
+  const entrada = document.getElementById('entrada');
+  const trollagem = document.getElementById('trollagem');
+  const principal = document.getElementById('principal');
+  const macaco = document.getElementById('macaco');
+  const clicarTexto = document.getElementById('clicar-texto');
+  const musica = document.getElementById('musica');
+
+  function showTrollagem() {
+    entrada.style.display = 'none';
+    trollagem.style.display = 'flex';
+
+    setTimeout(() => {
+      trollagem.style.display = 'none';
+      principal.style.display = 'block';
+      musica.play().catch(() => {});
+      document.body.style.overflow = 'auto';
+    }, 3500);
+  }
+
+  macaco.addEventListener('click', showTrollagem);
+  clicarTexto.addEventListener('click', showTrollagem);
+</script>
+
+</body>
+</html>
